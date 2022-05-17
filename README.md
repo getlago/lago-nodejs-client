@@ -1,6 +1,6 @@
-# Lago Node.JS Client
+# Lago Node.js Client
 
-This is a Node.JS wrapper for Lago API
+This is a Node.js wrapper for Lago API
 
 ## Installation
 
