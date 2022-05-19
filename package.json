@@ -11,7 +11,7 @@
     "./subscription": "./lib/models/subscription.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,10 @@
   "homepage": "https://github.com/getlago/lago-nodejs-client#readme",
   "dependencies": {
     "node-fetch": "^3.2.4"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "nock": "^13.2.4"
   }
 }
