@@ -23,7 +23,7 @@ let client = new Client('api_key')
 ``` javascript
 import Event from 'lago-nodejs-client/event'
 
-event = new Event(
+let event = new Event(
     "5eb02857-a71e-4ea2-bcf9-57d8885990ba", // customerId
     "__UNIQUE_TRANSACTION_ID__",  // transactionId
     "code",  // code
@@ -40,7 +40,7 @@ await client.createEvent(event);
 ``` javascript
 import Customer from 'lago-nodejs-client/customer'
 
-customer = new Customer(
+let customer = new Customer(
     "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // customerId
     None,  // addressLine1
     None,  // addressLine2
@@ -66,7 +66,7 @@ await client.createCustomer(customer);
 ``` javascript
 import Subscription from 'lago-nodejs-client/subscription'
 
-subscription = new Subscription(
+let subscription = new Subscription(
     "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // customerId
     "code"  // planCode
 )
