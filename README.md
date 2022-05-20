@@ -72,7 +72,7 @@ let subscription = new Subscription(
 )
 await client.createSubscription(subscription);
 await client.deleteSubscription({
-    "customerId": "5eb02857-a71e-4ea2-bcf9-57d8885990ba"
+    customerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba"
 })
 ```
 
