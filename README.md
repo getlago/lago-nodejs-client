@@ -76,6 +76,19 @@ await client.deleteSubscription({
 })
 ```
 
+### Applied coupons
+[Api reference](https://doc.getlago.com/docs/api/applied_coupons/applied-coupon-object)
+
+``` javascript
+import AppliedCoupon from 'lago-nodejs-client/applied_coupon'
+
+let appliedCoupon = new AppliedCoupon(
+    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // customerId
+    "code"  // couponCode
+)
+await client.applyCoupon(appliedCoupon);
+```
+
 ## Development
 
 ### Install the dependencies
