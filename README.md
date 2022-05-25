@@ -76,3 +76,16 @@ await client.deleteSubscription({
 })
 ```
 
+## Development
+
+### Install the dependencies
+
+```bash
+yarn
+```
+
+### Run tests
+
+```bash
+yarn test
+```
