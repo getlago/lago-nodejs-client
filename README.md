@@ -76,3 +76,16 @@ await client.deleteSubscription({
 })
 ```
 
+### Add-ons
+[Api reference](https://doc.getlago.com/docs/api/applied_add_ons/applied-add-on-object)
+
+``` javascript
+import AppliedAddOn from 'lago-nodejs-client/applied_add_on'
+
+let appliedAddOn = new AppliedAddOn(
+    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // customerId
+    "code"  // addOnCode
+)
+await client.applyAddOn(appliedAddOn);
+```
+
