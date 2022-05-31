@@ -2,6 +2,8 @@
 
 This is a Node.js wrapper for Lago API
 
+[![PyPI version](https://badge.fury.io/js/lago-nodejs-client.svg)](https://badge.fury.io/js/lago-nodejs-client)
+
 ## Installation
 
 Install the lago-nodejs-client via npm:
