@@ -1,6 +1,6 @@
 {
   "name": "lago-nodejs-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Lago Node.js API Client",
   "main": "./lib/client.js",
   "type": "module",
@@ -26,7 +26,7 @@
     "Client"
   ],
   "author": "Lovro Colic",
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "bugs": {
     "url": "https://github.com/getlago/lago-nodejs-client/issues"
   },
