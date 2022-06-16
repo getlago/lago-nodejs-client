@@ -78,6 +78,17 @@ await client.deleteSubscription({
 })
 ```
 
+### Invoices
+[Api reference](https://doc.getlago.com/docs/api/invoices/invoice-object)
+
+``` javascript
+
+await client.updateInvoiceStatus({
+    lagoId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
+    status: "succeeded"
+})
+```
+
 ### Applied coupons
 [Api reference](https://doc.getlago.com/docs/api/applied_coupons/applied-coupon-object)
 
