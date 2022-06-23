@@ -2,9 +2,27 @@ import { expect } from 'chai';
 import nock from 'nock';
 import Client from '../lib/client.js';
 import Customer from '../lib/models/customer.js';
+import BillingConfiguration from '../lib/models/billing_configuration.js';
 
 let client = new Client('api_key')
-let customer = new Customer("5eb02857-a71e-4ea2-bcf9-57d8885990ba", "Gavin Belson")
+let customer = new Customer(
+    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
+    "Gavin Belson",
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    new BillingConfiguration("stripe", "cus_12345")
+)
 
 describe('Successfully sent customer responds with 2xx', () => {
     before(() => {

@@ -10,7 +10,8 @@
     "./customer": "./lib/models/customer.js",
     "./subscription": "./lib/models/subscription.js",
     "./applied_coupon": "./lib/models/applied_coupon.js",
-    "./applied_add_on": "./lib/models/applied_add_on.js"
+    "./applied_add_on": "./lib/models/applied_add_on.js",
+    "./billing_configuration": "./lib/models/billing_configuration.js"
   },
   "scripts": {
     "test": "node_modules/.bin/mocha"

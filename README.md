@@ -57,7 +57,11 @@ let customer = new Customer(
     None,  // state
     None,  // url
     None,  // vatRate
-    None  // zipcode
+    None,  // zipcode
+    new BillingConfiguration(
+        "stripe",
+        "cus_12345"
+    )
 )
 await client.createCustomer(customer);
 ```
