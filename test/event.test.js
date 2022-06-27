@@ -39,3 +39,34 @@ describe('Status code is not 2xx', () => {
         }
     });
 });
+
+describe('Succefully find an event', () => {
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .get('/api/v1/events/transaction_id')
+            .reply(200, {})
+    });
+
+    it('returns response', async () => {
+        let response = await client.findEvent('transaction_id')
+        expect(response).to.be
+    })
+});
+
+describe('Error when finding an event', () => {
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .get('/api/v1/events/transaction_id')
+            .reply(404)
+    });
+
+    it('raises an exception', async () => {
+        try {
+            await client.findEvent('transaction_id')
+        } catch (err) {
+            expect(err.message).to.eq(errorMessage)
+        }
+    });
+});

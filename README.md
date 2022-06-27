@@ -22,6 +22,8 @@ let client = new Client('api_key')
 ### Events
 [Api reference](https://doc.getlago.com/docs/api/events)
 
+#### Push an event
+
 ``` javascript
 import Event from 'lago-nodejs-client/event'
 
@@ -34,6 +36,16 @@ let event = new Event(
 )
 
 await client.createEvent(event);
+```
+
+#### Find an event by its transaction_id
+
+``` javascript
+import Event from 'lago-nodejs-client/event'
+
+let transactionId = 'transactionId';
+
+let event = await client.findEvent(transactionId);
 ```
 
 ### Customers
