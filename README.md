@@ -72,7 +72,8 @@ let customer = new Customer(
     None,  // zipcode
     new BillingConfiguration(
         "stripe",
-        "cus_12345"
+        "cus_12345",
+        false
     )
 )
 await client.createCustomer(customer);
