@@ -57,3 +57,37 @@ describe('Status code is not 2xx', () => {
         }
     });
 });
+
+describe('Current usage responds with a 2xx', () => {
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .get('/api/v1/customers/customer_id/current_usage')
+            .reply(200, {});
+    });
+
+    it('returns response', async () => {
+        let response = await client.customerCurrentUsage('customer_id')
+
+        expect(response).to.be
+    });
+});
+
+describe('Current usage responds with other than 2xx', () => {
+    let errorMessage = 'The HTTP status of the response: 404, URL: https://api.getlago.com/api/v1/customers/customer_id/current_usage'
+
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .get('/api/v1/customers/customer_id/current_usage')
+            .reply(404);
+    });
+
+    it('raises an exception', async () => {
+        try {
+            await client.customerCurrentUsage('customer_id')
+        } catch (err) {
+            expect(err.message).to.eq(errorMessage)
+        }
+    });
+});

@@ -79,6 +79,10 @@ let customer = new Customer(
 await client.createCustomer(customer);
 ```
 
+```javascript
+let customerUsage = await client.customerCurrentUsage('customer_id')
+```
+
 ### Subscriptions
 [Api reference](https://doc.getlago.com/docs/api/subscriptions/subscription-object)
 
