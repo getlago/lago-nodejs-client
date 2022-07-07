@@ -8,7 +8,7 @@ let billableMetric = new BillableMetric('name1', 'code1', 'sum_agg', 'field_name
 let response = {
     billable_metric: {
         lago_id: "b7ab2926-1de8-4428-9bcd-779314ac129b",
-        name: "b7ab2926-1de8-4428-9bcd-779314ac129b",
+        name: "name1",
         code: "bm-code",
         description: null,
         aggregation_type: "sum_agg",

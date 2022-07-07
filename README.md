@@ -150,6 +150,24 @@ await client.destroyBillableMetric('code');
 await client.findAllBillableMetrics({per_page: 2, page: 3});
 ```
 
+### Coupons
+[Api reference](https://doc.getlago.com/docs/api/billable_metrics/billable-metric-object)
+
+``` javascript
+import Coupon from 'lago-nodejs-client/coupon'
+
+let coupon = new Coupon('name1', 'code1', 'no_expiration', 10000, 'USD')
+await client.createCoupon(coupon);
+
+await client.updateCoupon({name: 'new name', code: 'new_code'}, 'code');
+
+await client.findCoupon('code);
+
+await client.destroyCoupon('code');
+
+await client.findAllCoupons({per_page: 2, page: 3});
+```
+
 ## Development
 
 ### Install the dependencies
