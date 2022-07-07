@@ -132,6 +132,24 @@ let appliedAddOn = new AppliedAddOn(
 await client.applyAddOn(appliedAddOn);
 ```
 
+### Billable metrics
+[Api reference](https://doc.getlago.com/docs/api/billable_metrics/billable-metric-object)
+
+``` javascript
+import BillableMetric from 'lago-nodejs-client/billable_metric'
+
+let billableMetric = new BillableMetric('name1', 'code1', 'sum_agg', 'field_name')
+await client.createBillableMetric(billableMetric);
+
+await client.updateBillableMetric({name: 'new name', fieldName: 'new_field_name'}, 'code');
+
+await client.findBillableMetric('code);
+
+await client.destroyBillableMetric('code');
+
+await client.findAllBillableMetrics({per_page: 2, page: 3});
+```
+
 ## Development
 
 ### Install the dependencies
