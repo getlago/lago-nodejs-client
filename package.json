@@ -16,6 +16,7 @@
     "./add_on": "./lib/models/add_on.js",
     "./plan": "./lib/models/plan.js",
     "./charge": "./lib/models/charge.js",
+    "./organization": "./lib/models/organization.js",
     "./billing_configuration": "./lib/models/billing_configuration.js"
   },
   "scripts": {

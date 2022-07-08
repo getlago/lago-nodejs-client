@@ -7,13 +7,11 @@ import Charge from '../lib/models/charge.js';
 let client = new Client('api_key')
 let charge = new Charge({billableMetricId: 'billable_metric_id', amountCurrency: 'EUR',
         chargeModel: 'standard'
-    }
-)
+})
 let charges = [charge]
 let plan = new Plan({name: 'name1', code: 'code1', interval: 'weekly', amountCents: 1000,
         amountCurrency: 'USD', payInAdvance: false, charges: charges
-    }
-)
+})
 let response = {
     plan: {
         lago_id: 'this-is-lago-id',

@@ -4,7 +4,7 @@ import Client from '../lib/client.js';
 import AddOn from '../lib/models/add_on.js';
 
 let client = new Client('api_key')
-let addOn = new AddOn('name1', 'code1', 10000, 'USD')
+let addOn = new AddOn({name: 'name1', code: 'code1', amountCents: 10000, amountCurrency: 'USD'})
 let response = {
     add_on: {
         lago_id: "b7ab2926-1de8-4428-9bcd-779314ac129b",
@@ -60,7 +60,7 @@ describe('Successfully sent add_on update request responds with 2xx', () => {
     });
 
     it('returns response', async () => {
-        let response = await client.updateAddOn({name: 'new name', code: 'new_code'}, 'code1')
+        let response = await client.updateAddOn(new AddOn({name: 'new name', code: 'new_code'}), 'code1')
 
         expect(response).to.be
     });

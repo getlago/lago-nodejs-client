@@ -140,11 +140,12 @@ await client.applyAddOn(appliedAddOn);
 [Api reference](https://doc.getlago.com/docs/api/organizations/organization-object)
 
 ``` javascript
+import Organization from 'lago-nodejs-client/organization'
 
-await client.updateOrganization({
+await client.updateOrganization(new Organization({
     webhookUrl: "https://newwebhookurl.com",
     vatRate: 15.5
-})
+}))
 ```
 
 ### Billable metrics
@@ -153,10 +154,12 @@ await client.updateOrganization({
 ``` javascript
 import BillableMetric from 'lago-nodejs-client/billable_metric'
 
-let billableMetric = new BillableMetric('name1', 'code1', 'sum_agg', 'field_name')
+let billableMetric = new BillableMetric({name: 'name1', code: 'code1', aggregationType: 'sum_agg',
+    fieldName: 'field_name'
+})
 await client.createBillableMetric(billableMetric);
 
-await client.updateBillableMetric({name: 'new name', fieldName: 'new_field_name'}, 'code');
+await client.updateBillableMetric(new BillableMetric({name: 'new name', fieldName: 'new_field_name'}), 'code');
 
 await client.findBillableMetric('code);
 
@@ -171,10 +174,12 @@ await client.findAllBillableMetrics({per_page: 2, page: 3});
 ``` javascript
 import Coupon from 'lago-nodejs-client/coupon'
 
-let coupon = new Coupon('name1', 'code1', 'no_expiration', 10000, 'USD')
+let coupon = new Coupon({name: 'name1', code: 'code1', expiration: 'no_expiration',
+  amountCents: 10000, amountCurrency: 'USD'
+})
 await client.createCoupon(coupon);
 
-await client.updateCoupon({name: 'new name', code: 'new_code'}, 'code');
+await client.updateCoupon(new Coupon({name: 'new name', code: 'new_code'}), 'code');
 
 await client.findCoupon('code);
 
@@ -189,10 +194,12 @@ await client.findAllCoupons({per_page: 2, page: 3});
 ``` javascript
 import AddOn from 'lago-nodejs-client/add_on'
 
-let addOn = new AddOn('name1', 'code1', 10000, 'USD', 'description')
+let addOn = new AddOn({'name: name1', code: 'code1', amountCents: 10000, amountCurrency: 'USD',
+  description: 'description'
+})
 await client.createAddOn(addOn);
 
-await client.updateAddOn({name: 'new name', code: 'new_code'}, 'code');
+await client.updateAddOn(new AddOn({name: 'new name', code: 'new_code'}), 'code');
 
 await client.findAddOn('code);
 
@@ -213,8 +220,7 @@ let charges = [charge]
 let plan = new Plan({name: 'name1', code: 'code1', interval: 'weekly', amountCents: 1000,
     amountCurrency: 'USD', payInAdvance: true, trialPeriod: 2, description: 'decs',
     billChargesMonthly: false, charges: charges
-  }
-)
+})
 
 await client.createPlan(plan);
 

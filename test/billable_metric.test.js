@@ -4,7 +4,9 @@ import Client from '../lib/client.js';
 import BillableMetric from '../lib/models/billable_metric.js';
 
 let client = new Client('api_key')
-let billableMetric = new BillableMetric('name1', 'code1', 'sum_agg', 'field_name')
+let billableMetric = new BillableMetric({name: 'name1', code: 'code1', aggregationType: 'sum_agg',
+    fieldName: 'field_name'
+})
 let response = {
     billable_metric: {
         lago_id: "b7ab2926-1de8-4428-9bcd-779314ac129b",
@@ -60,7 +62,9 @@ describe('Successfully sent billable metric update request responds with 2xx', (
     });
 
     it('returns response', async () => {
-        let response = await client.updateBillableMetric({name: 'new name', fieldName: 'new_field_name'}, 'code1')
+        let response = await client.updateBillableMetric(
+            new BillableMetric({name: 'new name', fieldName: 'new_field_name'}), 'code1'
+        )
 
         expect(response).to.be
     });
