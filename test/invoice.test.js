@@ -37,3 +37,18 @@ describe('Status code is not 2xx', () => {
         }
     });
 });
+
+describe('Successfully request invoice download responds with 2xx', () => {
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .post('/api/v1/invoices/lago_id/download')
+            .reply(200, {});
+    });
+
+    it('returns response', async () => {
+        let response = await client.downloadInvoice('lago_id')
+
+        expect(response).to.be
+    });
+});
