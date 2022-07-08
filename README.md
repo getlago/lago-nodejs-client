@@ -136,6 +136,17 @@ let appliedAddOn = new AppliedAddOn(
 await client.applyAddOn(appliedAddOn);
 ```
 
+### Organizations
+[Api reference](https://doc.getlago.com/docs/api/organizations/organization-object)
+
+``` javascript
+
+await client.updateOrganization({
+    webhookUrl: "https://newwebhookurl.com",
+    vatRate: 15.5
+})
+```
+
 ### Billable metrics
 [Api reference](https://doc.getlago.com/docs/api/billable_metrics/billable-metric-object)
 
