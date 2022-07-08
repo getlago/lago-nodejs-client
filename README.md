@@ -201,6 +201,32 @@ await client.destroyAddOn('code');
 await client.findAllAddOns({per_page: 2, page: 3});
 ```
 
+### Plans
+[Api reference](https://doc.getlago.com/docs/api/plans/plan-object)
+
+``` javascript
+import Plan from 'lago-nodejs-client/plan'
+import Charge from 'lago-nodejs-client/charge'
+
+let charge = new Charge({billableMetricId: 'billable_metric_id', amountCurrency: 'EUR', chargeModel: 'standard'})
+let charges = [charge]
+let plan = new Plan({name: 'name1', code: 'code1', interval: 'weekly', amountCents: 1000,
+    amountCurrency: 'USD', payInAdvance: true, trialPeriod: 2, description: 'decs',
+    billChargesMonthly: false, charges: charges
+  }
+)
+
+await client.createPlan(plan);
+
+await client.updatePlan(plan, 'code');
+
+await client.findPlan('code);
+
+await client.destroyPlan('code');
+
+await client.findAllPlans({per_page: 2, page: 3});
+```
+
 ## Development
 
 ### Install the dependencies
