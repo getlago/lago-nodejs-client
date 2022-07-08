@@ -168,6 +168,24 @@ await client.destroyCoupon('code');
 await client.findAllCoupons({per_page: 2, page: 3});
 ```
 
+### Add-ons
+[Api reference](https://doc.getlago.com/docs/api/add_ons/add-on-object)
+
+``` javascript
+import AddOn from 'lago-nodejs-client/add_on'
+
+let addOn = new AddOn('name1', 'code1', 10000, 'USD', 'description')
+await client.createAddOn(addOn);
+
+await client.updateAddOn({name: 'new name', code: 'new_code'}, 'code');
+
+await client.findAddOn('code);
+
+await client.destroyAddOn('code');
+
+await client.findAllAddOns({per_page: 2, page: 3});
+```
+
 ## Development
 
 ### Install the dependencies

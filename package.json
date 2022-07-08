@@ -13,6 +13,7 @@
     "./applied_add_on": "./lib/models/applied_add_on.js",
     "./billable_metric": "./lib/models/billable_metric.js",
     "./coupon": "./lib/models/coupon.js",
+    "./add_on": "./lib/models/add_on.js",
     "./billing_configuration": "./lib/models/billing_configuration.js"
   },
   "scripts": {
