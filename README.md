@@ -79,6 +79,10 @@ let customer = new Customer(
 await client.createCustomer(customer);
 ```
 
+```javascript
+let customerUsage = await client.customerCurrentUsage('customer_id')
+```
+
 ### Subscriptions
 [Api reference](https://doc.getlago.com/docs/api/subscriptions/subscription-object)
 
@@ -108,6 +112,8 @@ await client.updateInvoiceStatus({
 await client.findInvoice("5eb02857-a71e-4ea2-bcf9-57d8885990b");
 
 await client.findAllInvoices({per_page: 2, page: 3});
+
+await client.downloadInvoice("5eb02857-a71e-4ea2-bcf9-57d8885990ba")
 ```
 
 ### Applied coupons
