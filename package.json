@@ -11,6 +11,12 @@
     "./subscription": "./lib/models/subscription.js",
     "./applied_coupon": "./lib/models/applied_coupon.js",
     "./applied_add_on": "./lib/models/applied_add_on.js",
+    "./billable_metric": "./lib/models/billable_metric.js",
+    "./coupon": "./lib/models/coupon.js",
+    "./add_on": "./lib/models/add_on.js",
+    "./plan": "./lib/models/plan.js",
+    "./charge": "./lib/models/charge.js",
+    "./organization": "./lib/models/organization.js",
     "./billing_configuration": "./lib/models/billing_configuration.js"
   },
   "scripts": {

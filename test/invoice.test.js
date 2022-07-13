@@ -52,3 +52,48 @@ describe('Successfully request invoice download responds with 2xx', () => {
         expect(response).to.be
     });
 });
+
+describe('Successfully sent invoice find request responds with 2xx', () => {
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .get('/api/v1/invoices/id')
+            .reply(200, {});
+    });
+
+    it('returns response', async () => {
+        let response = await client.findInvoice('id')
+
+        expect(response).to.be
+    });
+});
+
+describe('Successfully sent invoice find all request responds with 2xx', () => {
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .get('/api/v1/invoices')
+            .reply(200, {});
+    });
+
+    it('returns response', async () => {
+        let response = await client.findAllInvoices()
+
+        expect(response).to.be
+    });
+});
+
+describe('Successfully sent invoice find all request with options responds with 2xx', () => {
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .get('/api/v1/invoices?per_page=2&page=3')
+            .reply(200, {});
+    });
+
+    it('returns response', async () => {
+        let response = await client.findAllInvoices({per_page: 2, page: 3})
+
+        expect(response).to.be
+    });
+});
