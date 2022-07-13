@@ -40,7 +40,7 @@ describe('Status code is not 2xx', () => {
     });
 });
 
-describe('Succefully find an event', () => {
+describe('Successfully find an event', () => {
     before(() => {
         nock.cleanAll()
         nock('https://api.getlago.com')
@@ -55,6 +55,8 @@ describe('Succefully find an event', () => {
 });
 
 describe('Error when finding an event', () => {
+    let errorMessage = 'The HTTP status of the response: 404, URL: https://api.getlago.com/api/v1/events/transaction_id'
+
     before(() => {
         nock.cleanAll()
         nock('https://api.getlago.com')

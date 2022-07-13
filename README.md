@@ -109,6 +109,10 @@ await client.updateInvoiceStatus({
     status: "succeeded"
 })
 
+await client.findInvoice("5eb02857-a71e-4ea2-bcf9-57d8885990b");
+
+await client.findAllInvoices({per_page: 2, page: 3});
+
 await client.downloadInvoice("5eb02857-a71e-4ea2-bcf9-57d8885990ba")
 ```
 
@@ -136,6 +140,103 @@ let appliedAddOn = new AppliedAddOn(
     "code"  // addOnCode
 )
 await client.applyAddOn(appliedAddOn);
+```
+
+### Organizations
+[Api reference](https://doc.getlago.com/docs/api/organizations/organization-object)
+
+``` javascript
+import Organization from 'lago-nodejs-client/organization'
+
+await client.updateOrganization(new Organization({
+    webhookUrl: "https://newwebhookurl.com",
+    vatRate: 15.5
+}))
+```
+
+### Billable metrics
+[Api reference](https://doc.getlago.com/docs/api/billable_metrics/billable-metric-object)
+
+``` javascript
+import BillableMetric from 'lago-nodejs-client/billable_metric'
+
+let billableMetric = new BillableMetric({name: 'name1', code: 'code1', aggregationType: 'sum_agg',
+    fieldName: 'field_name'
+})
+await client.createBillableMetric(billableMetric);
+
+await client.updateBillableMetric(new BillableMetric({name: 'new name', fieldName: 'new_field_name'}), 'code');
+
+await client.findBillableMetric('code');
+
+await client.destroyBillableMetric('code');
+
+await client.findAllBillableMetrics({per_page: 2, page: 3});
+```
+
+### Coupons
+[Api reference](https://doc.getlago.com/docs/api/billable_metrics/billable-metric-object)
+
+``` javascript
+import Coupon from 'lago-nodejs-client/coupon'
+
+let coupon = new Coupon({name: 'name1', code: 'code1', expiration: 'no_expiration',
+  amountCents: 10000, amountCurrency: 'USD'
+})
+await client.createCoupon(coupon);
+
+await client.updateCoupon(new Coupon({name: 'new name', code: 'new_code'}), 'code');
+
+await client.findCoupon('code');
+
+await client.destroyCoupon('code');
+
+await client.findAllCoupons({per_page: 2, page: 3});
+```
+
+### Add-ons
+[Api reference](https://doc.getlago.com/docs/api/add_ons/add-on-object)
+
+``` javascript
+import AddOn from 'lago-nodejs-client/add_on'
+
+let addOn = new AddOn({'name: name1', code: 'code1', amountCents: 10000, amountCurrency: 'USD',
+  description: 'description'
+})
+await client.createAddOn(addOn);
+
+await client.updateAddOn(new AddOn({name: 'new name', code: 'new_code'}), 'code');
+
+await client.findAddOn('code');
+
+await client.destroyAddOn('code');
+
+await client.findAllAddOns({per_page: 2, page: 3});
+```
+
+### Plans
+[Api reference](https://doc.getlago.com/docs/api/plans/plan-object)
+
+``` javascript
+import Plan from 'lago-nodejs-client/plan'
+import Charge from 'lago-nodejs-client/charge'
+
+let charge = new Charge({billableMetricId: 'billable_metric_id', amountCurrency: 'EUR', chargeModel: 'standard'})
+let charges = [charge]
+let plan = new Plan({name: 'name1', code: 'code1', interval: 'weekly', amountCents: 1000,
+    amountCurrency: 'USD', payInAdvance: true, trialPeriod: 2, description: 'decs',
+    billChargesMonthly: false, charges: charges
+})
+
+await client.createPlan(plan);
+
+await client.updatePlan(plan, 'code');
+
+await client.findPlan('code');
+
+await client.destroyPlan('code');
+
+await client.findAllPlans({per_page: 2, page: 3});
 ```
 
 ## Development
