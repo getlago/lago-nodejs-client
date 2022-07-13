@@ -161,7 +161,7 @@ await client.createBillableMetric(billableMetric);
 
 await client.updateBillableMetric(new BillableMetric({name: 'new name', fieldName: 'new_field_name'}), 'code');
 
-await client.findBillableMetric('code);
+await client.findBillableMetric('code');
 
 await client.destroyBillableMetric('code');
 
@@ -181,7 +181,7 @@ await client.createCoupon(coupon);
 
 await client.updateCoupon(new Coupon({name: 'new name', code: 'new_code'}), 'code');
 
-await client.findCoupon('code);
+await client.findCoupon('code');
 
 await client.destroyCoupon('code');
 
@@ -201,7 +201,7 @@ await client.createAddOn(addOn);
 
 await client.updateAddOn(new AddOn({name: 'new name', code: 'new_code'}), 'code');
 
-await client.findAddOn('code);
+await client.findAddOn('code');
 
 await client.destroyAddOn('code');
 
@@ -226,7 +226,7 @@ await client.createPlan(plan);
 
 await client.updatePlan(plan, 'code');
 
-await client.findPlan('code);
+await client.findPlan('code');
 
 await client.destroyPlan('code');
 
