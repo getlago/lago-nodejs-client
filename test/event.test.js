@@ -2,9 +2,12 @@ import { expect } from 'chai';
 import nock from 'nock';
 import Client from '../lib/client.js';
 import Event from '../lib/models/event.js';
+import BatchEvent from '../lib/models/batch_event.js';
 
 let client = new Client('api_key')
-let event = new Event('transactionId', 'customerId', 'code')
+let event = new Event({transactionId: 'transactionId', customerId: 'customerId', code: 'code'})
+let batchEvent = new BatchEvent({transactionId: 'transactionId', subscriptionIds: ['123', '456'], code: 'code'})
+
 
 describe('Successfully sent event responds with 2xx', () => {
     before(() => {
@@ -37,6 +40,21 @@ describe('Status code is not 2xx', () => {
         } catch (err) {
             expect(err.message).to.eq(errorMessage)
         }
+    });
+});
+
+describe('Successfully sent batch event responds with 2xx', () => {
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .post('/api/v1/events/batch')
+            .reply(200, '');
+    });
+
+    it('returns true', async () => {
+        let response = await client.createBatchEvent(batchEvent)
+
+        expect(response).to.eq(true)
     });
 });
 

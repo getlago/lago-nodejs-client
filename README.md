@@ -26,16 +26,27 @@ let client = new Client('api_key')
 
 ``` javascript
 import Event from 'lago-nodejs-client/event'
+import BatchEvent from 'lago-nodejs-client/batch_event'
 
-let event = new Event(
-    "5eb02857-a71e-4ea2-bcf9-57d8885990ba", // customerId
-    "__UNIQUE_TRANSACTION_ID__",  // transactionId
-    "code",  // code
-    1650893379, // timestamp
-    {custom_field: "custom"} // properties
-)
+let event = new Event({
+      customerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
+      transactionId: "__UNIQUE_TRANSACTION_ID__",
+      code: "code",
+      timestamp: 1650893379,
+      properties: {custom_field: "custom"}
+})
 
 await client.createEvent(event);
+
+let batchEvent = new BatchEvent({
+      subscriptionIds: ["5eb02857-a71e-4ea2-bcf9-57d8885990ba", "75e02857-a71e-4ea2-bcf9-57d8885990ba"],
+      transactionId: "__UNIQUE_TRANSACTION_ID__",
+      code: "code",
+      timestamp: 1650893379,
+      properties: {custom_field: "custom"}
+})
+
+await client.createBatchEvent(batchEvent);
 ```
 
 #### Find an event by its transaction_id
@@ -80,7 +91,7 @@ await client.createCustomer(customer);
 ```
 
 ```javascript
-let customerUsage = await client.customerCurrentUsage('customer_id')
+let customerUsage = await client.customerCurrentUsage('customer_id', 'subscription_id')
 ```
 
 ### Subscriptions
@@ -89,14 +100,19 @@ let customerUsage = await client.customerCurrentUsage('customer_id')
 ``` javascript
 import Subscription from 'lago-nodejs-client/subscription'
 
-let subscription = new Subscription(
-    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // customerId
-    "code"  // planCode
-)
-await client.createSubscription(subscription);
-await client.deleteSubscription({
-    customerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba"
+let subscription = new Subscription({
+    customerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
+    planCode: "code",
+    name: "name",
+    uniqueId: "id"
 })
+await client.createSubscription(subscription);
+
+await client.updateSubscription(new Subscription({name: 'new name'}), 'id');
+
+await client.destroySubscription('id');
+
+await client.findAllSubscriptions({customer_id: '123'});
 ```
 
 ### Invoices
