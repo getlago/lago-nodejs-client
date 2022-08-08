@@ -443,9 +443,9 @@
   "version" "1.0.0"
 
 "node-fetch@^3.2.4":
-  "integrity" "sha512-WvYJRN7mMyOLurFR2YpysQGuwYrJN+qrrpHjJDuKMcSPdfFccRUla/kng2mz6HWSBxJcqPbvatS6Gb4RhOzCJw=="
-  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-3.2.4.tgz"
-  "version" "3.2.4"
+  "integrity" "sha512-MhuzNwdURnZ1Cp4XTazr69K0BTizsBroX7Zx3UgDSVcZYKF/6p0CBe4EUb/hLqmzVhl0UpYfgRljQ4yxE+iCxA=="
+  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-3.2.10.tgz"
+  "version" "3.2.10"
   dependencies:
     "data-uri-to-buffer" "^4.0.0"
     "fetch-blob" "^3.1.4"
