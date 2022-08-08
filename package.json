@@ -7,6 +7,7 @@
   "exports": {
     ".": "./lib/client.js",
     "./event": "./lib/models/event.js",
+    "./batch_event": "./lib/models/batch_event.js",
     "./customer": "./lib/models/customer.js",
     "./subscription": "./lib/models/subscription.js",
     "./applied_coupon": "./lib/models/applied_coupon.js",
