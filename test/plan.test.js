@@ -30,7 +30,6 @@ let response = {
                 lago_id: 'id',
                 lago_billable_metric_id: 'id',
                 created_at: '2022-04-29T08:59:51Z',
-                amount_currency: 'USD',
                 charge_model: 'standard',
                 properties: {}
             }
