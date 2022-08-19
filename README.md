@@ -237,7 +237,7 @@ await client.findAllAddOns({per_page: 2, page: 3});
 import Plan from 'lago-nodejs-client/plan'
 import Charge from 'lago-nodejs-client/charge'
 
-let charge = new Charge({billableMetricId: 'billable_metric_id', amountCurrency: 'EUR', chargeModel: 'standard'})
+let charge = new Charge({billableMetricId: 'billable_metric_id', chargeModel: 'standard'})
 let charges = [charge]
 let plan = new Plan({name: 'name1', code: 'code1', interval: 'weekly', amountCents: 1000,
     amountCurrency: 'USD', payInAdvance: true, trialPeriod: 2, description: 'decs',
