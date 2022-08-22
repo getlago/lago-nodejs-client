@@ -5,7 +5,7 @@ import Subscription from '../lib/models/subscription.js';
 
 let client = new Client('api_key')
 let subscription = new Subscription(
-    {customerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba", planCode: "eartha lynch", uniqueId: '123'}
+    {customerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba", planCode: "eartha lynch", uniqueId: '123', billingTime: 'anniversary'}
 )
 
 describe('Successfully sent subscription responds with 2xx', () => {

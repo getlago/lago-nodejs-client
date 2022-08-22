@@ -104,8 +104,10 @@ let subscription = new Subscription({
     customerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
     planCode: "code",
     name: "name",
-    uniqueId: "id"
+    uniqueId: "id",
+    billingTime: "anniversary"
 })
+
 await client.createSubscription(subscription);
 
 await client.updateSubscription(new Subscription({name: 'new name'}), 'id');
