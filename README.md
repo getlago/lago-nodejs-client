@@ -104,7 +104,7 @@ let subscription = new Subscription({
     customerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
     planCode: "code",
     name: "name",
-    uniqueId: "id",
+    subscriptionId: "673c2243-873b-4d55-b3eb-5e98c4677980",
     billingTime: "anniversary"
 })
 
