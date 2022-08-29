@@ -39,7 +39,7 @@ let event = new Event({
 await client.createEvent(event);
 
 let batchEvent = new BatchEvent({
-      subscriptionIds: ["5eb02857-a71e-4ea2-bcf9-57d8885990ba", "75e02857-a71e-4ea2-bcf9-57d8885990ba"],
+      externalSubscriptionIds: ["5eb02857-a71e-4ea2-bcf9-57d8885990ba", "75e02857-a71e-4ea2-bcf9-57d8885990ba"],
       transactionId: "__UNIQUE_TRANSACTION_ID__",
       code: "code",
       timestamp: 1650893379,
@@ -91,7 +91,7 @@ await client.createCustomer(customer);
 ```
 
 ```javascript
-let customerUsage = await client.customerCurrentUsage('external_customer_id', 'subscription_id')
+let customerUsage = await client.customerCurrentUsage('external_customer_id', 'external_subscription_id')
 ```
 
 ### Subscriptions
