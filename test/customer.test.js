@@ -62,30 +62,30 @@ describe('Current usage responds with a 2xx', () => {
     before(() => {
         nock.cleanAll()
         nock('https://api.getlago.com')
-            .get('/api/v1/customers/customer_id/current_usage?subscription_id=123')
+            .get('/api/v1/customers/external_customer_id/current_usage?subscription_id=123')
             .reply(200, {});
     });
 
     it('returns response', async () => {
-        let response = await client.customerCurrentUsage('customer_id', '123')
+        let response = await client.customerCurrentUsage('external_customer_id', '123')
 
         expect(response).to.be
     });
 });
 
 describe('Current usage responds with other than 2xx', () => {
-    let errorMessage = 'The HTTP status of the response: 404, URL: https://api.getlago.com/api/v1/customers/customer_id/current_usage?subscription_id=123'
+    let errorMessage = 'The HTTP status of the response: 404, URL: https://api.getlago.com/api/v1/customers/external_customer_id/current_usage?subscription_id=123'
 
     before(() => {
         nock.cleanAll()
         nock('https://api.getlago.com')
-            .get('/api/v1/customers/customer_id/current_usage?subscription_id=123')
+            .get('/api/v1/customers/external_customer_id/current_usage?subscription_id=123')
             .reply(404);
     });
 
     it('raises an exception', async () => {
         try {
-            await client.customerCurrentUsage('customer_id', '123')
+            await client.customerCurrentUsage('external_customer_id', '123')
         } catch (err) {
             expect(err.message).to.eq(errorMessage)
         }
