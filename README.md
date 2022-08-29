@@ -29,7 +29,7 @@ import Event from 'lago-nodejs-client/event'
 import BatchEvent from 'lago-nodejs-client/batch_event'
 
 let event = new Event({
-      customerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
+      externalCustomerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
       transactionId: "__UNIQUE_TRANSACTION_ID__",
       code: "code",
       timestamp: 1650893379,
@@ -66,7 +66,7 @@ let event = await client.findEvent(transactionId);
 import Customer from 'lago-nodejs-client/customer'
 
 let customer = new Customer(
-    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // customerId
+    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // externalId
     None,  // addressLine1
     None,  // addressLine2
     None,  // city
@@ -91,7 +91,7 @@ await client.createCustomer(customer);
 ```
 
 ```javascript
-let customerUsage = await client.customerCurrentUsage('customer_id', 'subscription_id')
+let customerUsage = await client.customerCurrentUsage('external_customer_id', 'subscription_id')
 ```
 
 ### Subscriptions
@@ -101,20 +101,19 @@ let customerUsage = await client.customerCurrentUsage('customer_id', 'subscripti
 import Subscription from 'lago-nodejs-client/subscription'
 
 let subscription = new Subscription({
-    customerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
+    externalCustomerId: "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
     planCode: "code",
     name: "name",
-    uniqueId: "id",
     billingTime: "anniversary"
 })
 
 await client.createSubscription(subscription);
 
-await client.updateSubscription(new Subscription({name: 'new name'}), 'id');
+await client.updateSubscription(new Subscription({name: 'new name'}), 'external_id');
 
-await client.destroySubscription('id');
+await client.destroySubscription('external_id');
 
-await client.findAllSubscriptions({customer_id: '123'});
+await client.findAllSubscriptions({external_customer_id: '123'});
 ```
 
 ### Invoices
@@ -141,7 +140,7 @@ await client.downloadInvoice("5eb02857-a71e-4ea2-bcf9-57d8885990ba")
 import AppliedCoupon from 'lago-nodejs-client/applied_coupon'
 
 let appliedCoupon = new AppliedCoupon(
-    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // customerId
+    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // externalCustomerId
     "code"  // couponCode
 )
 await client.applyCoupon(appliedCoupon);
@@ -154,7 +153,7 @@ await client.applyCoupon(appliedCoupon);
 import AppliedAddOn from 'lago-nodejs-client/applied_add_on'
 
 let appliedAddOn = new AppliedAddOn(
-    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // customerId
+    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",  // externalCustomerId
     "code"  // addOnCode
 )
 await client.applyAddOn(appliedAddOn);
