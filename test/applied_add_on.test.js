@@ -16,7 +16,7 @@ describe('Successfully sent apply coupon responds with 2xx', () => {
                     lago_id: "lago_id",
                     lago_add_on_id: "lago_add_on_id",
                     add_on_code: "add_on_code",
-                    customer_id: "testtest",
+                    external_customer_id: "testtest",
                     lago_customer_id: "lago_test_test",
                     amount_cents: 123,
                     amount_currency: "EUR",

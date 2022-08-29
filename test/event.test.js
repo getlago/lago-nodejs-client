@@ -5,7 +5,7 @@ import Event from '../lib/models/event.js';
 import BatchEvent from '../lib/models/batch_event.js';
 
 let client = new Client('api_key')
-let event = new Event({transactionId: 'transactionId', customerId: 'customerId', code: 'code'})
+let event = new Event({transactionId: 'transactionId', externalCustomerId: 'externalCustomerId', code: 'code'})
 let batchEvent = new BatchEvent({transactionId: 'transactionId', subscriptionIds: ['123', '456'], code: 'code'})
 
 
