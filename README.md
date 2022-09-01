@@ -278,7 +278,7 @@ await client.findAllWllets({external_customer_id: '123', per_page: 2, page: 3});
 ```
 
 ### WalletTransactions
-[Api reference](https://doc.getlago.com/docs/api/wallet_transactions/wallet-transaction-object)
+[Api reference](https://doc.getlago.com/docs/api/wallets/wallet-transaction-object)
 
 ``` javascript
 import WalletTransaction from 'lago-nodejs-client/wallet_transaction'
