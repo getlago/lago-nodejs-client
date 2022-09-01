@@ -4,7 +4,7 @@ import Client from '../lib/client.js';
 import Wallet from '../lib/models/wallet.js';
 
 let client = new Client('api_key')
-let wallet = new Wallet({customerId: '123', rateAmount: 1, name: 'name',
+let wallet = new Wallet({externalCustomerId: '123', rateAmount: 1, name: 'name',
     paidCredits: 100, grantedCredits: 100, expirationDate: '2022-07-07'
 })
 let response = {
@@ -116,12 +116,12 @@ describe('Successfully sent wallet find all request with options responds with 2
     before(() => {
         nock.cleanAll()
         nock('https://api.getlago.com')
-            .get('/api/v1/wallets?customer_id=123&per_page=2&page=3')
+            .get('/api/v1/wallets?external_customer_id=123&per_page=2&page=3')
             .reply(200, {});
     });
 
     it('returns response', async () => {
-        let response = await client.findAllWallets({customer_id: 123, per_page: 2, page: 3})
+        let response = await client.findAllWallets({external_customer_id: 123, per_page: 2, page: 3})
 
         expect(response).to.be
     });

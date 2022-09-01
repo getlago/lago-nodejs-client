@@ -263,7 +263,7 @@ await client.findAllPlans({per_page: 2, page: 3});
 ``` javascript
 import Wallet from 'lago-nodejs-client/wallet'
 
-let wallet = new Wallet({customerId: '123', rateAmount: 1, name: 'name',
+let wallet = new Wallet({externalCustomerId: '123', rateAmount: 1, name: 'name',
   paidCredits: 100, grantedCredits: 100, expirationDate: '2022-07-07'
 })
 await client.createWallet(wallet);
@@ -274,7 +274,7 @@ await client.findWallet('id');
 
 await client.destroyWallet('id');
 
-await client.findAllWllets({customer_id: '123', per_page: 2, page: 3});
+await client.findAllWllets({external_customer_id: '123', per_page: 2, page: 3});
 ```
 
 ### WalletTransactions
