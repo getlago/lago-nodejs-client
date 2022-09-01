@@ -4,16 +4,16 @@ import Client from '../lib/client.js';
 import Wallet from '../lib/models/wallet.js';
 
 let client = new Client('api_key')
-let wallet = new Wallet({externalCustomerId: '123', rateAmount: 1, name: 'name',
-    paidCredits: 100, grantedCredits: 100, expirationDate: '2022-07-07'
+let wallet = new Wallet({externalCustomerId: '123', rateAmount: '1', name: 'name',
+    paidCredits: '100', grantedCredits: '100', expirationDate: '2022-07-07'
 })
 let response = {
     wallet: {
         lago_id: "b7ab2926-1de8-4428-9bcd-779314ac129b",
         lago_customer_id: "123",
         external_customer_id: "external-123",
-        rate_amount: 1,
-        balance: 200,
+        rate_amount: "1",
+        balance: "200",
         expiration_date: "2022-07-07",
         created_at: "2022-04-29T08:59:51Z",
     }
