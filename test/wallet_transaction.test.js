@@ -4,14 +4,14 @@ import Client from '../lib/client.js';
 import WalletTransaction from '../lib/models/wallet_transaction.js';
 
 let client = new Client('api_key')
-let walletTransaction = new WalletTransaction({walletId: '123', paidCredits: 100, grantedCredits: 100})
+let walletTransaction = new WalletTransaction({walletId: '123', paidCredits: '100', grantedCredits: '100'})
 let response = {
     wallet_transactions: [
         {
             lago_id: "b7ab2926-1de8-4428-9bcd-779314ac129b",
             lago_wallet_id: "123",
-            amount: 1,
-            credit_amount: 100,
+            amount: "1",
+            credit_amount: "100",
             status: "pending",
             transaction_type: "inbound",
             settled_at: null,
@@ -20,8 +20,8 @@ let response = {
         {
             lago_id: "b7ab2926-1de8-4428-9bcd-779314ac1111",
             lago_wallet_id: "123",
-            amount: 1,
-            credit_amount: 100,
+            amount: "1",
+            credit_amount: "100",
             status: "settled",
             transaction_type: "inbound",
             settled_at: "2022-04-29T08:59:51Z",
