@@ -11,6 +11,7 @@ let response = {
     wallet: {
         lago_id: "b7ab2926-1de8-4428-9bcd-779314ac129b",
         lago_customer_id: "123",
+        external_customer_id: "external-123",
         rate_amount: 1,
         balance: 200,
         expiration_date: "2022-07-07",
@@ -116,12 +117,12 @@ describe('Successfully sent wallet find all request with options responds with 2
     before(() => {
         nock.cleanAll()
         nock('https://api.getlago.com')
-            .get('/api/v1/wallets?external_customer_id=123&per_page=2&page=3')
+            .get('/api/v1/wallets?external_customer_id=external-123&per_page=2&page=3')
             .reply(200, {});
     });
 
     it('returns response', async () => {
-        let response = await client.findAllWallets({external_customer_id: 123, per_page: 2, page: 3})
+        let response = await client.findAllWallets({external_customer_id: 'external-123', per_page: 2, page: 3})
 
         expect(response).to.be
     });
