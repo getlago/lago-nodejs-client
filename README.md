@@ -257,6 +257,36 @@ await client.destroyPlan('code');
 await client.findAllPlans({per_page: 2, page: 3});
 ```
 
+### Wallets
+[Api reference](https://doc.getlago.com/docs/api/wallets/wallet-object)
+
+``` javascript
+import Wallet from 'lago-nodejs-client/wallet'
+
+let wallet = new Wallet({externalCustomerId: '123', rateAmount: 1, name: 'name',
+  paidCredits: 100, grantedCredits: 100, expirationDate: '2022-07-07'
+})
+await client.createWallet(wallet);
+
+await client.updateWallet(new Wallet({name: 'new name'}), 'id');
+
+await client.findWallet('id');
+
+await client.destroyWallet('id');
+
+await client.findAllWllets({external_customer_id: '123', per_page: 2, page: 3});
+```
+
+### WalletTransactions
+[Api reference](https://doc.getlago.com/docs/api/wallets/wallet-transaction-object)
+
+``` javascript
+import WalletTransaction from 'lago-nodejs-client/wallet_transaction'
+
+let transaction = new WalletTransaction({walletId: '123', paidCredits: 100, grantedCredits: 100})
+await client.createWalletTransaction(transaction);
+```
+
 ## Development
 
 ### Install the dependencies
