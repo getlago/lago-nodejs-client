@@ -88,6 +88,10 @@ let customer = new Customer(
     )
 )
 await client.createCustomer(customer);
+
+await client.findCustomer("5eb02857-a71e-4ea2-bcf9-57d8885990b");
+
+await client.findAllCustomers({per_page: 2, page: 3});
 ```
 
 ```javascript
