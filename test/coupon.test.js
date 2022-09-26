@@ -15,7 +15,11 @@ let response = {
         expiration: "no_expiration",
         amount_cents: 1000,
         amount_currency: "EUR",
-        expiration_curation: null,
+        expiration_date: null,
+        frequency: "once",
+        frequency_duration: null,
+        coupon_type: "fixed_amount",
+        percentage_rate: null,
         created_at: "2022-04-29T08:59:51Z",
     }
 }
