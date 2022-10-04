@@ -3,6 +3,7 @@
 This is a Node.js wrapper for Lago API
 
 [![PyPI version](https://badge.fury.io/js/lago-nodejs-client.svg)](https://badge.fury.io/js/lago-nodejs-client)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 ## Installation
 
