@@ -4,9 +4,17 @@ import Client from '../lib/client.js';
 import BillableMetric from '../lib/models/billable_metric.js';
 
 let client = new Client('api_key')
-let billableMetric = new BillableMetric({name: 'name1', code: 'code1', aggregationType: 'sum_agg',
-    fieldName: 'field_name'
+let billableMetric = new BillableMetric({
+    name: 'name1',
+    code: 'code1',
+    aggregationType: 'sum_agg',
+    fieldName: 'field_name',
+    group: {
+        key: 'country',
+        values: ["france", "italy", "spain"]
+    }
 })
+
 let response = {
     billable_metric: {
         lago_id: "b7ab2926-1de8-4428-9bcd-779314ac129b",
@@ -16,6 +24,10 @@ let response = {
         aggregation_type: "sum_agg",
         field_name: "field_name",
         created_at: "2022-04-29T08:59:51Z",
+        group: {
+            key: 'country',
+            values: ["france", "italy", "spain"]
+        }
     }
 }
 
