@@ -31,7 +31,8 @@ let response = {
                 lago_billable_metric_id: 'id',
                 created_at: '2022-04-29T08:59:51Z',
                 charge_model: 'standard',
-                properties: {}
+                properties: {},
+                group_properties: []
             }
         ]
     }
