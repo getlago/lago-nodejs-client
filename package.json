@@ -13,6 +13,7 @@
     "./applied_coupon": "./lib/models/applied_coupon.js",
     "./applied_add_on": "./lib/models/applied_add_on.js",
     "./billable_metric": "./lib/models/billable_metric.js",
+    "./group": "./lib/models/group.js",
     "./coupon": "./lib/models/coupon.js",
     "./add_on": "./lib/models/add_on.js",
     "./plan": "./lib/models/plan.js",
