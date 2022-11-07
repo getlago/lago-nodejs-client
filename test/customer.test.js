@@ -22,7 +22,7 @@ let customer = new Customer(
     null,
     null,
     null,
-    new BillingConfiguration("stripe", "cus_12345"),
+    new BillingConfiguration("stripe", "cus_12345", true, true),
 )
 
 describe('Successfully sent customer responds with 2xx', () => {
