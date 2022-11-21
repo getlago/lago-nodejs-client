@@ -1,6 +1,6 @@
 {
   "name": "lago-nodejs-client",
-  "version": "1.6.0",
+  "version": "v0.15.1-alpha",
   "description": "Lago Node.js API Client",
   "main": "./lib/client.js",
   "type": "module",
