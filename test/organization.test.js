@@ -4,6 +4,7 @@ import Client from '../lib/client.js';
 
 let client = new Client('api_key')
 import Organization from '../lib/models/organization.js';
+import OrganizationBillingConfiguration from '../lib/models/organization_billing_configuration.js';
 
 describe('Successfully sent organization update status responds with 2xx', () => {
     before(() => {
@@ -14,7 +15,12 @@ describe('Successfully sent organization update status responds with 2xx', () =>
     });
 
     it('returns response', async () => {
-        let response = await client.updateOrganization(new Organization({webhookUrl: 'new url', vatRate: 15.5}))
+        let response = await client.updateOrganization(
+            new Organization({
+                webhookUrl: 'new url',
+                billingConfiguration: new OrganizationBillingConfiguration("footer", 15.5),
+            })
+        )
 
         expect(response).to.be
     });
