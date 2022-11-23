@@ -55,3 +55,33 @@ describe('Status code is not 2xx', () => {
         }
     });
 });
+
+describe('Successfully sent applied coupon find all request responds with 2xx', () => {
+  before(() => {
+    nock.cleanAll()
+    nock('https://api.getlago.com')
+      .get('/api/v1/applied_coupons')
+      .reply(200, {});
+  });
+
+  it('returns response', async () => {
+    let response = await client.findAllAppliedCoupons()
+
+    expect(response).to.be
+  });
+});
+
+describe('Successfully sent applied coupon find all request with options responds with 2xx', () => {
+  before(() => {
+    nock.cleanAll()
+    nock('https://api.getlago.com')
+      .get('/api/v1/applied_coupons?per_page=2&page=3')
+      .reply(200, {});
+  });
+
+  it('returns response', async () => {
+    let response = await client.findAllAppliedCoupons({per_page: 2, page: 3})
+
+    expect(response).to.be
+  });
+});
