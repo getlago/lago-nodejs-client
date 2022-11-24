@@ -7,9 +7,9 @@ This is a Node.js wrapper for Lago API
 ## Installation
 
 Install the lago-nodejs-client via npm:
-
-    $ npm install lago-nodejs-client
-
+```bash
+npm install lago-nodejs-client
+```
 
 ## Usage
 
