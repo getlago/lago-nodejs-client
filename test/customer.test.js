@@ -6,23 +6,23 @@ import CustomerBillingConfiguration from '../lib/models/customer_billing_configu
 
 let client = new Client('api_key')
 let customer = new Customer(
-    "5eb02857-a71e-4ea2-bcf9-57d8885990ba",
-    "Gavin Belson",
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    new CustomerBillingConfiguration("stripe", "cus_12345"),
+    "5eb02857-a71e-4ea2-bcf9-57d8885990ba", // externalId
+    "Gavin Belson", // name
+    null, // addressLine1
+    null, // addressLine2
+    null, // city
+    null, // country
+    null, // currency
+    null, // email
+    null, // legalName
+    null, // legalNumber
+    null, // logoUrl
+    null, // phone
+    null, // state
+    null, // timezone
+    null, // url
+    null, // zipcode
+    new CustomerBillingConfiguration("stripe", "cus_12345"), // billingConfiguration
 )
 
 describe('Successfully sent customer responds with 2xx', () => {

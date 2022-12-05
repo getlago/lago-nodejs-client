@@ -14,7 +14,7 @@ let response = {
         external_customer_id: "external-123",
         rate_amount: "1",
         balance: "200",
-        expiration_date: "2022-07-07",
+        expiration_at: "2022-07-07T23:59:59Z",
         created_at: "2022-04-29T08:59:51Z",
     }
 }
