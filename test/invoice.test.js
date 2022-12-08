@@ -4,7 +4,7 @@ import Client from '../lib/client.js';
 
 let client = new Client('api_key')
 
-describe('Successfully sent invoice update status responds with 2xx', () => {
+describe('Successfully sent invoice update payment status responds with 2xx', () => {
     before(() => {
         nock.cleanAll()
         nock('https://api.getlago.com')
@@ -13,7 +13,7 @@ describe('Successfully sent invoice update status responds with 2xx', () => {
     });
 
     it('returns response', async () => {
-        let response = await client.updateInvoiceStatus({lagoId: 'lago_id', status: 'succeeded'})
+        let response = await client.updateInvoicePaymentStatus({lagoId: 'lago_id', paymentStatus: 'succeeded'})
 
         expect(response).to.be
     });
@@ -31,7 +31,7 @@ describe('Status code is not 2xx', () => {
 
     it('raises an exception', async () => {
         try {
-            await client.updateInvoiceStatus({lagoId: 'lago_id', status: 'succeeded'})
+            await client.updateInvoicePaymentStatus({lagoId: 'lago_id', paymentStatus: 'succeeded'})
         } catch (err) {
             expect(err.message).to.eq(errorMessage)
         }
