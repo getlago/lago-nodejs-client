@@ -6,20 +6,21 @@
   "type": "module",
   "exports": {
     ".": "./lib/client.js",
-    "./event": "./lib/models/event.js",
-    "./batch_event": "./lib/models/batch_event.js",
-    "./customer": "./lib/models/customer.js",
-    "./subscription": "./lib/models/subscription.js",
-    "./applied_coupon": "./lib/models/applied_coupon.js",
-    "./applied_add_on": "./lib/models/applied_add_on.js",
-    "./billable_metric": "./lib/models/billable_metric.js",
-    "./group": "./lib/models/group.js",
-    "./coupon": "./lib/models/coupon.js",
     "./add_on": "./lib/models/add_on.js",
-    "./plan": "./lib/models/plan.js",
+    "./applied_add_on": "./lib/models/applied_add_on.js",
+    "./applied_coupon": "./lib/models/applied_coupon.js",
+    "./batch_event": "./lib/models/batch_event.js",
+    "./billable_metric": "./lib/models/billable_metric.js",
+    "./billing_configuration": "./lib/models/billing_configuration.js",
     "./charge": "./lib/models/charge.js",
+    "./coupon": "./lib/models/coupon.js",
+    "./credit_note": "./lib/models/credit_note.js",
+    "./customer": "./lib/models/customer.js",
+    "./event": "./lib/models/event.js",
+    "./group": "./lib/models/group.js",
     "./organization": "./lib/models/organization.js",
-    "./billing_configuration": "./lib/models/billing_configuration.js"
+    "./plan": "./lib/models/plan.js",
+    "./subscription": "./lib/models/subscription.js"
   },
   "scripts": {
     "test": "node_modules/.bin/mocha"
