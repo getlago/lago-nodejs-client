@@ -15,7 +15,7 @@ let response = {
         expiration: "no_expiration",
         amount_cents: 1000,
         amount_currency: "EUR",
-        expiration_date: null,
+        expiration_at: null,
         frequency: "once",
         frequency_duration: null,
         coupon_type: "fixed_amount",
