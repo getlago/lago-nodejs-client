@@ -3,13 +3,18 @@ import nock from 'nock';
 import Client from '../lib/client.js';
 
 let client = new Client('api_key')
+let response = {
+  webhook: {
+    public_key: 'aGVsbG8=',
+  }
+}
 
 describe('Successfully sent webhook public key request responds with 2xx', () => {
     before(() => {
         nock.cleanAll()
         nock('https://api.getlago.com')
             .get('/api/v1/webhooks/public_key')
-            .reply(200, 'aGVsbG8=');
+            .reply(200, response);
     });
 
     it('returns decoded public key', async () => {
