@@ -99,3 +99,5 @@ web_modules/
 
 .idea/*
 *.iml
+
+npm/
