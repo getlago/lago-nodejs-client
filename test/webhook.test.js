@@ -13,7 +13,7 @@ describe('Successfully sent webhook public key request responds with 2xx', () =>
     before(() => {
         nock.cleanAll()
         nock('https://api.getlago.com')
-            .get('/api/v1/webhooks/public_key')
+            .get('/api/v1/webhooks/json_public_key')
             .reply(200, response);
     });
 
@@ -25,12 +25,12 @@ describe('Successfully sent webhook public key request responds with 2xx', () =>
 });
 
 describe('Status code is not 2xx', () => {
-    let errorMessage = 'The HTTP status of the response: 422, URL: https://api.getlago.com/api/v1/webhooks/public_key'
+    let errorMessage = 'The HTTP status of the response: 422, URL: https://api.getlago.com/api/v1/webhooks/json_public_key'
 
     before(() => {
         nock.cleanAll()
         nock('https://api.getlago.com')
-            .get('/api/v1/webhooks/public_key')
+            .get('/api/v1/webhooks/json_public_key')
             .reply(422);
     });
 
