@@ -18,7 +18,11 @@ describe('Successfully sent organization update status responds with 2xx', () =>
         let response = await client.updateOrganization(
             new Organization({
                 webhookUrl: 'new url',
-                billingConfiguration: new OrganizationBillingConfiguration("footer", 15.5),
+                billingConfiguration: new OrganizationBillingConfiguration({
+                    invoiceFooter: "footer",
+                    invoiceGracePeriod: 2,
+                    vatRate: 15.5
+                }),
             })
         )
 
@@ -38,7 +42,7 @@ describe('Status code is not 2xx', () => {
 
     it('raises an exception', async () => {
         try {
-            await client.updateOrganization(new Organization({webhookUrl: 'new url', vatRate: 15.5}))
+            await client.updateOrganization(new Organization({webhookUrl: 'new url'}))
         } catch (err) {
             expect(err.message).to.eq(errorMessage)
         }
