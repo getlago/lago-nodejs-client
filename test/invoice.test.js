@@ -112,3 +112,18 @@ describe('Successfully request invoice refresh responds with 2xx', () => {
         expect(response).to.be
     });
 });
+
+describe('Successfully request invoice finalize responds with 2xx', () => {
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .put('/api/v1/invoices/lago_id/finalize')
+            .reply(200, {});
+    });
+
+    it('returns response', async () => {
+        let response = await client.finalizeInvoice('lago_id')
+
+        expect(response).to.be
+    });
+});
