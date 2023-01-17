@@ -53,6 +53,21 @@ describe('Successfully request invoice download responds with 2xx', () => {
     });
 });
 
+describe('Successfully sent invoice retry payment request responds with 2xx', () => {
+  before(() => {
+    nock.cleanAll()
+    nock('https://api.getlago.com')
+      .post('/api/v1/invoices/lago_id/retry_payment')
+      .reply(200, {});
+  });
+
+  it('returns response', async () => {
+    let response = await client.retryInvoicePayment('lago_id')
+
+    expect(response).to.be
+  });
+});
+
 describe('Successfully sent invoice find request responds with 2xx', () => {
     before(() => {
         nock.cleanAll()
