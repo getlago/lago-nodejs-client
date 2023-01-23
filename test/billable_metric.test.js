@@ -27,7 +27,9 @@ let response = {
         group: {
             key: 'country',
             values: ["france", "italy", "spain"]
-        }
+        },
+        active_subscriptions_count: 0,
+        draft_invoices_count: 0
     }
 }
 
