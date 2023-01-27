@@ -63,3 +63,18 @@ describe('Status code is not 2xx', () => {
         }
     });
 });
+
+describe('Successfully sent find all wallet transactions request', () => {
+  before(() => {
+    nock.cleanAll()
+    nock('https://api.getlago.com')
+      .get('/api/v1/wallets/555/wallet_transactions')
+      .reply(200, {});
+  });
+
+  it('returns a 200', async () => {
+    let response = await client.findAllWalletTransactions('555')
+
+    expect(response).to.be
+  });
+});
