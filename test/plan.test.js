@@ -25,6 +25,8 @@ let response = {
         trial_period: 2,
         pay_in_advance: false,
         bill_charges_monthly: false,
+        active_subscriptions_count: 0,
+        draft_invoices_count: 0,
         charges: [
             {
                 lago_id: 'id',
