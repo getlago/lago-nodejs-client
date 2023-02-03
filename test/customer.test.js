@@ -97,3 +97,18 @@ describe('Current usage responds with other than 2xx', () => {
         }
     });
 });
+
+describe('Successfully sent customer destroy request', () => {
+    before(() => {
+        nock.cleanAll()
+        nock('https://api.getlago.com')
+            .delete('/api/v1/customers/5eb02857-a71e-4ea2-bcf9-57d8885990ba')
+            .reply(200, {});
+    });
+
+    it('returns the deleted customers', async () => {
+        let response = await client.destroyCustomer('5eb02857-a71e-4ea2-bcf9-57d8885990ba')
+
+        expect(response).to.be
+    });
+});
