@@ -13,6 +13,7 @@
     "./billable_metric": "./lib/models/billable_metric.js",
     "./charge": "./lib/models/charge.js",
     "./coupon": "./lib/models/coupon.js",
+    "./coupon_limitation_configuration": "./lib/models/coupon_limitation_configuration.js",
     "./credit_note": "./lib/models/credit_note.js",
     "./customer": "./lib/models/customer.js",
     "./customer_billing_configuration": "./lib/models/customer_billing_configuration.js",

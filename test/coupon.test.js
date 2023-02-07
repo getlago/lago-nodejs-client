@@ -2,10 +2,18 @@ import { expect } from 'chai';
 import nock from 'nock';
 import Client from '../lib/client.js';
 import Coupon from '../lib/models/coupon.js';
+import CouponLimitationConfiguration from "../lib/models/coupon_limitation_configuration.js";
 
 let client = new Client('api_key')
-let coupon = new Coupon({name: 'name1', code: 'code1', expiration: 'no_expiration',
-    amountCents: 10000, amountCurrency: 'USD'
+let coupon = new Coupon({
+  name: 'name1',
+  code: 'code1',
+  expiration: 'no_expiration',
+  amountCents: 10000,
+  amountCurrency: 'USD',
+  appliesTo: new CouponLimitationConfiguration({
+    planCodes: ['plan1']
+  })
 })
 let response = {
     coupon: {
