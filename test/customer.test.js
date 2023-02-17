@@ -27,6 +27,7 @@ let customer = new Customer({
         invoiceGracePeriod: 3,
         paymentProvider: "stripe",
         providerCustomerId: "cus_12345",
+        documentLocale: 'fr'
     })
 })
 

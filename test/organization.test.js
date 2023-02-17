@@ -21,7 +21,8 @@ describe('Successfully sent organization update status responds with 2xx', () =>
                 billingConfiguration: new OrganizationBillingConfiguration({
                     invoiceFooter: "footer",
                     invoiceGracePeriod: 2,
-                    vatRate: 15.5
+                    vatRate: 15.5,
+                    documentLocale: 'fr'
                 }),
             })
         )
