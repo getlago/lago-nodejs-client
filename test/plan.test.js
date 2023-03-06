@@ -5,8 +5,11 @@ import Plan from '../lib/models/plan.js';
 import Charge from '../lib/models/charge.js';
 
 let client = new Client('api_key')
-let charge = new Charge({billableMetricId: 'billable_metric_id', amountCurrency: 'EUR',
-        chargeModel: 'standard'
+let charge = new Charge({
+    billableMetricId: 'billable_metric_id',
+    amountCurrency: 'EUR',
+    chargeModel: 'standard',
+    instant: false
 })
 let charges = [charge]
 let plan = new Plan({name: 'name1', code: 'code1', interval: 'weekly', amountCents: 1000,
@@ -33,6 +36,7 @@ let response = {
                 lago_billable_metric_id: 'id',
                 created_at: '2022-04-29T08:59:51Z',
                 charge_model: 'standard',
+                instant: false,
                 properties: {},
                 group_properties: []
             }
