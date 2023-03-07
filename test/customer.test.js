@@ -3,6 +3,7 @@ import nock from 'nock';
 import Client from '../lib/client.js';
 import Customer from '../lib/models/customer.js';
 import CustomerBillingConfiguration from '../lib/models/customer_billing_configuration.js';
+import CustomerMetadata from "../lib/models/customer_metadata.js";
 
 let client = new Client('api_key')
 
@@ -23,6 +24,13 @@ let customer = new Customer({
     timezone: null,
     url: null,
     zipcode: null,
+    metadata: [
+        new CustomerMetadata({
+          key: 'key',
+          value: 'value',
+          displayInInvoice: true
+        })
+    ],
     customerBillingConfiguration: new CustomerBillingConfiguration({
         invoiceGracePeriod: 3,
         paymentProvider: "stripe",

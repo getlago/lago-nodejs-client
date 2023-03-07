@@ -17,6 +17,7 @@
     "./credit_note": "./lib/models/credit_note.js",
     "./customer": "./lib/models/customer.js",
     "./customer_billing_configuration": "./lib/models/customer_billing_configuration.js",
+    "./customer_metadata": "./lib/models/customer_metadata.js",
     "./event": "./lib/models/event.js",
     "./organization": "./lib/models/organization.js",
     "./organization_billing_configuration": "./lib/models/organization_billing_configuration.js",
