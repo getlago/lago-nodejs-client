@@ -29,7 +29,8 @@ let response = {
             values: ["france", "italy", "spain"]
         },
         active_subscriptions_count: 0,
-        draft_invoices_count: 0
+        draft_invoices_count: 0,
+        plan_count: 0
     }
 }
 
