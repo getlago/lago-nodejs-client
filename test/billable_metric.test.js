@@ -30,7 +30,7 @@ let response = {
         },
         active_subscriptions_count: 0,
         draft_invoices_count: 0,
-        plan_count: 0
+        plans_count: 0
     }
 }
 
