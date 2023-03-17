@@ -53,6 +53,8 @@ let response = {
           refund_amount_currency: "EUR",
           vat_amount_cents: 20,
           vat_amount_currency: "EUR",
+          total_amount_cents: 120,
+          total_amount_currency: "EUR",
           units: 12.6,
           events_count: 4
         }
