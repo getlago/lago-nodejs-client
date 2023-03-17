@@ -1,4 +1,8 @@
-# Lago Node.js Client
+# ⚠️ DEPRECATED
+
+We're deprecating this repo in favor of https://github.com/getlago/lago-javascript-client that supports Typescript.
+
+## Lago Node.js Client
 
 This is a Node.js wrapper for Lago API
 
